@@ -44,7 +44,8 @@ dropoutt <- dropoutt %>%
            pull(Population))
 
 View(dropoutt)
-write_xlsx(dropoutt,"dropout_NSS.xlsx")
+write_xlsx(
+
 
 
 
