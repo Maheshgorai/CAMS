@@ -15,7 +15,7 @@ dropout_basee <- NSS %>%
   ) %>%
   filter(Dropout == "Yes", between(Age, 6, 18))
 
-# Define the age groups as named list of ranges (using colon operator for integer sequences)
+
 age_groups <- list(
   "Age 6-13" = 6:13,
   "Age 6-14" = 6:14,
@@ -45,5 +45,6 @@ dropoutt <- dropoutt %>%
 
 View(dropoutt)
 write_xlsx(dropoutt,"dropout_NSS.xlsx")
+
 
 
