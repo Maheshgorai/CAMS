@@ -11,7 +11,7 @@ dropout_basee <- NSS %>%
   mutate(
     final_weight = V57/100,
     Dropout = if_else(V21==2, "Yes", "No"),
-    Age = as.integer(V19)  # Ensure Age is integer for range checks
+    Age = as.integer(V19)  
   ) %>%
   filter(Dropout == "Yes", between(Age, 6, 18))
 
@@ -45,4 +45,5 @@ dropoutt <- dropoutt %>%
 
 View(dropoutt)
 write_xlsx(dropoutt,"dropout_NSS.xlsx")
+
 
