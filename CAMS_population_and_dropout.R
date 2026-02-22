@@ -44,7 +44,8 @@ dropoutt <- dropoutt %>%
            pull(Population))
 
 View(dropoutt)
-write_xlsx(
+
+
 
 
 
