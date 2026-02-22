@@ -3,10 +3,10 @@ library(data.table)
 library(tidyr)
 library(writexl)
 library(purrr)
-setwd("D:/Sch_edu/UDISE+")
+
 NSS <- fread("D:/Sch_edu/UDISE+/NSS79CAMS_Member.txt")
 View(NSS)
-# Prepare the base dropout dataset with weights and filters
+
 dropout_basee <- NSS %>%
   mutate(
     final_weight = V57/100,
@@ -45,3 +45,4 @@ dropoutt <- dropoutt %>%
 
 View(dropoutt)
 write_xlsx(dropoutt,"dropout_NSS.xlsx")
+
