@@ -23,7 +23,7 @@ age_groups <- list(
   "Age 15-18" = 15:18
 )
 
-# Calculate population sums independently for each ag
+# Calculate po
 dropoutt <- map_dfr(names(age_groups), ~{
   range <- age_groups[[.x]]
   dropout_basee %>%
@@ -42,6 +42,7 @@ dropoutt <- dropoutt %>%
   mutate(India_Total = dropout_basee %>%
            summarise(Population = sum(final_weight, na.rm = TRUE)) %>%
            pull(Population))
+
 
 
 
