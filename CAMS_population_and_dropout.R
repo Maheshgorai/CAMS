@@ -36,11 +36,12 @@ dropoutt <- map_dfr(names(age_groups), ~{
     values_fill = 0
   )
 
-# Add India_Total as the sum for the full 6-18 range (non-overlapping total)
+# Add India_Total as the sum for the 
 dropoutt <- dropoutt %>%
   mutate(India_Total = dropout_basee %>%
            summarise(Population = sum(final_weight, na.rm = TRUE)) %>%
            pull(Population))
+
 
 
 
