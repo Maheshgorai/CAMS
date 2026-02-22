@@ -43,7 +43,7 @@ dropoutt <- dropoutt %>%
            summarise(Population = sum(final_weight, na.rm = TRUE)) %>%
            pull(Population))
 
-View(dropoutt)
+
 
 
 
