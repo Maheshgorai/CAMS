@@ -1,7 +1,6 @@
 library(dplyr)
 library(data.table)
 library(tidyr)
-library(writexl)
 
 
 NSS <- fread("D:/Sch_edu/UDISE+/NSS79CAMS_Member.txt")
@@ -41,6 +40,7 @@ dropoutt <- dropoutt %>%
   mutate(India_Total = dropout_basee %>%
            summarise(Population = sum(final_weight, na.rm = TRUE)) %>%
            pull(Population))
+
 
 
 
