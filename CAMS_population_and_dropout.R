@@ -2,8 +2,7 @@ library(dplyr)
 library(data.table)
 library(tidyr)
 
-
-NSS <- fread("D:/Sch_edu/UDISE+/NSS79CAMS_Member.txt")
+NSS <- fread("D:/*****/*****/NSS79CAMS_Member.txt")
 
 dropout_basee <- NSS %>%
   mutate(
@@ -12,7 +11,6 @@ dropout_basee <- NSS %>%
     Age = as.integer(V19)  
   ) %>%
   filter(Dropout == "Yes", between(Age, 6, 18))
-
 
 age_groups <- list(
   "Age 6-13" = 6:13,
@@ -34,11 +32,11 @@ dropoutt <- map_dfr(names(age_groups), ~{
     values_fill = 0
   )
 
-
 dropoutt <- dropoutt %>%
   mutate(India_Total = dropout_basee %>%
            summarise(Population = sum(final_weight, na.rm = TRUE)) %>%
            pull(Population))
+
 
 
 
